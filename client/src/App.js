@@ -1,14 +1,16 @@
-
 import './App.css';
-import Nav from './components/Nav';
-import SiderBar from './components/SiderBar';
+import { BrowserRouter, Route,Routes} from 'react-router-dom';
+import Home from './customer/Home';
+import Comments from './customer/Comments';
 
 function App() {
   return (
-    <>
-     <Nav/>
-     <SiderBar/>
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route  path='/' element={<Home/>}/> 
+          <Route path='/comments' element={<Comments/>}/> 
+      </Routes>
+    </BrowserRouter>
   );
 }
 
