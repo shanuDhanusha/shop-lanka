@@ -40,8 +40,9 @@ routes.route('').get((req,res)=>{
 ////// get id reviews .........................../////
 
 routes.route('/reviewUnque/:id').get((req,res)=>{
-    let id=req.params.id;
     console.log("herrrrrrrr")
+    let id=req.query.id;
+   
     try {
         console.log("inside")
 
