@@ -10,12 +10,12 @@ export default function Home(){
             <div class="flex h-screen border-spacing-3 border border-white   shadow-xl">
                 <SideBar/>
                 <div class="flex-grow  p-5 grid grid-cols-3 overflow-auto">
-                    <CardCoustom/> 
-                    <CardCoustom/> 
-                    <CardCoustom/> 
-                    <CardCoustom/> 
-                    <CardCoustom/> 
-                    <CardCoustom/> 
+                    <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
                 </div>
             </div>
             

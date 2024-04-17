@@ -24,7 +24,7 @@ export default function SiderBar(){
               <Link to="/comments" className="block px-4 py-2 rounded hover:bg-gray-700  mt-6 font-extrabold flex" ><MdOutlineRateReview  size={35} className=" mr-4"/>Review</Link>
             </li>
             <li className="mb-2 hover:scale-50  duration-500">
-              <Link to="#" className="block px-4 py-2 rounded hover:bg-gray-700 mt-6 font-extrabold flex"><RiShoppingCartLine  size={35} className=" mr-4"/>Add to Cart</Link>
+              <Link to="/Puchers" className="block px-4 py-2 rounded hover:bg-gray-700 mt-6 font-extrabold flex"><RiShoppingCartLine  size={35} className=" mr-4"/>Purches Item</Link>
             </li>
             <li className=" mt-40  ml-0 hover:scale-50  duration-500 ">
               <Link to="#" className=" flex font-extrabold block px-4 py-2 rounded  hover:bg-gray-700 "><BsBoxArrowUpLeft size={25} className=" mr-5 ml-4"/>log out</Link>
