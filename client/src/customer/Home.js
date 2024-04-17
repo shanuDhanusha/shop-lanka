@@ -16,6 +16,7 @@ export default function Home(){
                     <CardCoustom buttonName={"Read more"}/> 
                     <CardCoustom buttonName={"Read more"}/> 
                     <CardCoustom buttonName={"Read more"}/> 
+                    <CardCoustom buttonName={"Read more"}/> 
                 </div>
             </div>
             
