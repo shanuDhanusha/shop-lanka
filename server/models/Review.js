@@ -6,6 +6,10 @@ const Review=new mongoose.Schema({
         type:String,
         //required:true
     },
+    reviewCatagory:{
+        type:String,
+        //required:true
+    },
     reviewUser:{
         type:String,
        // required:true

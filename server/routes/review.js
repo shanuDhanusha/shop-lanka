@@ -10,10 +10,15 @@ routes.use(express.json());
 
 routes.route('/reviewAdd').post((req,res)=>{
 
-    const{review,reviewUser,productID}=req.body;
+    console.log("errorasssssssssvvvvvvvvvv");
+
+    const{review,reviewCatagory,reviewUser,productID}=req.body;
+
+    console.log("errorasssssssss");
 
     const productsRieview=new Review({
         review,
+        reviewCatagory,
         reviewUser,
         productID
     })
@@ -29,7 +34,7 @@ routes.route('/reviewAdd').post((req,res)=>{
 
 /////// get review.................................../////
 
-routes.route('').get((req,res)=>{
+routes.route('/reviewGet').get((req,res)=>{
     Review.find().then((reviews)=>{
         res.json(reviews)
     }).catch((error)=>{

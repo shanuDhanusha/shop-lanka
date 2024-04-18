@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
+
 
 function ReviewPops(props) {
   const [category, setCategory] = useState('');
@@ -15,10 +18,25 @@ function ReviewPops(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle submission of category and comments
+    
     console.log("Category:", category);
     console.log("Comments:", comments);
-    // You can perform further actions like sending data to a server here
+
+    axios.post('http://localhost:5000/review/reviewAdd',{
+        review: comments,
+        reviewCatagory: category,
+        reviewUser: 'shanu@gmail.com',
+        productID: '001'
+      })
+      .then((response) => {
+        console.log("Data sent successfully:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error occurred while sending data:", error);
+        
+      });
+    
+
   };
 
   return (
