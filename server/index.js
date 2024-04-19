@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 
 const studentRoutes=require("./routes/student.js");
 const reviewRoutes=require("./routes/review.js");
 
-app.listen(8000, () => console.log('Server listening on port 5000'));
+app.listen(5000, () => console.log('Server listening on port 5000'));
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb+srv://deshan:dha%40201233@shops.bvhxsev.mongodb.net/shops', { useNewUrlParser: true, useUnifiedTopology: true });
