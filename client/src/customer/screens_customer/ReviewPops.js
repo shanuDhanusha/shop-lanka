@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+//import {useHistory} from 'react-router-dom';
 
 
 function ReviewPops(props) {
   const [category, setCategory] = useState('');
   const [comments, setComments] = useState('');
+  //const history=useHistory();
 
   const handleCategoryChange = (event) => {
 
@@ -35,6 +36,9 @@ function ReviewPops(props) {
         console.error("Error occurred while sending data:", error);
         
       });
+      
+      //history.push('/comments');
+
     
 
   };
@@ -53,9 +57,9 @@ function ReviewPops(props) {
             onChange={handleCategoryChange}
             className="mt-1 p-2 border border-gray-300 rounded-md w-full"
           > 
-             <option value="category1">Comment category</option>
-             <option value="category2">Bad Review</option>
-             <option value="category2">Good Review</option>
+             <option value="" disabled hidden>Comments category</option>
+             <option value="Bad Review">Bad Review</option>
+             <option value="Good Review">Good Review</option>
             
           </select>
         </div>

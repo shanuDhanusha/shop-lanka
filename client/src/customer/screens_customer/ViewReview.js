@@ -4,12 +4,17 @@ export default function ViewReview(props){
     console.log(props)
 //box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
  return(
-    <div style={{height:'200px',width:'400px',boxShadow: "1px 3px 1px #9E9E9E",borderRadius:'10px',outline:'2px solid black'}}>
+    <div style={{height:'200px',width:'400px',boxShadow: "1px 3px 1px #9E9E9E",borderRadius:'10px',outline:'2px solid Black',marginBottom: '40px'}}>
     <div style={{height:'50px',display:'flex',flexDirection:'row',justifyContent:'space-evenly',alignItems:'center',padding:'3px'}}>
         <div style={{height:'45px',width:'45px',borderRadius:'45px'}}>
             <img src={avatar}></img>
         </div>
-        <div style={{height:'45px',width:'280px',color:'black',display:'flex',alignItems:'center'}}>{props.data.reviewUser}</div>
+        <div style={{height:'45px',width:'280px',color:'black',display:'flex', flexDirection: 'column'}}>
+            
+            <div>{props.data.reviewUser}</div>
+            <div>{props.data.reviewCatagory}</div> 
+            
+            </div>
         <div style={{height:'45px',width:'45px'}}></div>
     </div>
     <div style={{height:'2px',width:'100%',paddingLeft:'5%',paddingRight:'5%'}}>
