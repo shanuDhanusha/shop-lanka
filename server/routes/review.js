@@ -6,8 +6,6 @@ const { model } = require('mongoose');
 
 routes.use(express.json());
 
-////// add review ................................../////
-
 routes.route('/reviewAdd').post((req,res)=>{
 
     console.log("errorasssssssssvvvvvvvvvv");

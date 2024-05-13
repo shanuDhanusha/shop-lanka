@@ -3,10 +3,6 @@ import Button1 from '../button/Button1';
 import  logo from  '../assets/logo.jpg';
 import { TbBrandElectronicArts } from "react-icons/tb";
 
-
-
-
-
 export default function Nav(){
 
 
