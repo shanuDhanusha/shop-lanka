@@ -1,16 +1,18 @@
 import React from "react";
 import logo from "../assets/logo.jpg";
 import fiture from "../assets/f1.jpeg"
+import im1 from "../assets/im1.jpeg"
+
 
    
   export default function CardCoustom(props) {
     return (
           <div class="max-w-sm   mt-10 ml-6 mb-5 bg-white border  hover:mt-5 duration-500 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                 <img src= {fiture} alt="alat" className=" rounded-t-lg  w-fit "/> 
+                 <img src={fiture} alt="alat" className=" rounded-t-lg  w-fit "/> 
                  <hr></hr>                
               <div class="p-5">
                   <a href="#">
-                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Best Item</h5>
                   </a>
                   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                   <button  onClick={props.eventFunction} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">

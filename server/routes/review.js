@@ -8,11 +8,7 @@ routes.use(express.json());
 
 routes.route('/reviewAdd').post((req,res)=>{
 
-    console.log("errorasssssssssvvvvvvvvvv");
-
     const{review,reviewCatagory,reviewUser,productID}=req.body;
-
-    console.log("errorasssssssss");
 
     const productsRieview=new Review({
         review,
@@ -40,31 +36,41 @@ routes.route('/reviewGet').get((req,res)=>{
     })
 });
 
-////// get id reviews .........................../////
+/// update review.....................///
 
-routes.route('/reviewUnque/:id').get((req,res)=>{
-    console.log("herrrrrrrr")
-    let id=req.query.id;
-   
-    try {
-        console.log("inside")
+routes.route('/reviewUpdate').put(async(req,res)=>{
 
-        // Find the review by its ID
-        // const review = await Review.findById(id);
+   let object=req.body;
+   let id=object.data.reviewId;
+   let update_review=object.data.review;
+   let update_catagory=object.data.reviewCatagory;
 
-        const review = 'adfasfad'; 
-        if (!review) {
-            // If review is not found, send 404 Not Found response
-            return res.status(404).json({ error: 'Review not found' });
-        }
+    console.log("dsfsdfsdf",id )
+    console.log("hiiii",update_review)
+     
+    
+   const update=await Review.findByIdAndUpdate({ _id:id },{review:update_review,reviewCatagory:update_catagory},{new:true}).then(()=>{
 
-        // If review is found, send it back as JSON response
-        res.status(200).json(review);
-    } catch (error) {
-        // Handle any errors
-        console.error('Error finding review by ID:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
+    res.status(200).send({sta:"user update"});
+
+  }).catch((error)=>{
+    console.log("Error update:",error);
+  }) 
+
+});
+
+///// delete review............////
+
+routes.route('/reviewDelete').delete(async(req,res)=>{
+
+   let id=req.body;
+
+   await Review.findOneAndDelete({_id:id.id}).then(()=>{
+    res.status(200).send({state:"review deleted"});
+   }).catch((error)=>{
+     console.log("Error Delete:",error)
+   })
+
 });
 
 module.exports=routes;
