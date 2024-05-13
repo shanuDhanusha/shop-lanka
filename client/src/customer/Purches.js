@@ -9,11 +9,20 @@ export default function Purchers (){
   
     const [isPopoverOpen, setIsPopoverOpen] = useState(false);
     const [isPopoverBack, setIsPopoverBack] = useState(true);
+    const [arrayData,setarrayData]=useState([
+        {discription:'Electric Kettle, Rs.3150',customer:'hesha@gmail.com',productId:'00001'},
+        {discription:'Gas Cooker, Rs.6000',customer:'hesha@gmail.com',productId:'00002'}
+    ])
 
     const togglePopover = () => {
       setIsPopoverOpen(!isPopoverOpen);
       setIsPopoverBack(!isPopoverBack);
     };
+
+    const close=()=>{
+        setIsPopoverOpen(false)
+        setIsPopoverBack(true)
+    }
 
 
     return(
@@ -22,18 +31,16 @@ export default function Purchers (){
            {isPopoverBack? <div class="flex h-screen border-spacing-3 border border-white   shadow-xl">
                 <SiderBar/>
                 <div class="flex-grow  p-5 grid grid-cols-3 overflow-auto">
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/> 
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/> 
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/> 
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/> 
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/> 
-                    <CardCoustom buttonName={"Review"} eventFunction={togglePopover}/>
-                   
-                  
 
+                    {
+                        arrayData && arrayData.map((item,index)=>(
+                            <CardCoustom buttonName={"Review"}  eventFunction={togglePopover} key={index} data={item}/> 
+                        ))
+                    }
+                  
                 </div>
             
-            </div>:<div className="bg-black bg-opacity-50">  {isPopoverOpen?<ReviewPops buttonName="Submit"/>:<></>}</div>
+            </div>:<div className="bg-black bg-opacity-50">  {isPopoverOpen?<ReviewPops closePop={close} buttonName="Submit"/>:<></>}</div>
             }
             
       
