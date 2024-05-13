@@ -4,11 +4,11 @@ const ProductSchema=new mongoose.Schema({
    
    productName:{
     type:String,
-    required:true
+    // required:true
    },
    discription:{
      type:String,
-     required:true
+    // required:true
    },
    image:{
     type:String,
@@ -16,7 +16,7 @@ const ProductSchema=new mongoose.Schema({
    },
    addUser:{
     type:String,
-    required:true
+    //required:true
    }
 
 

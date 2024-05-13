@@ -4,11 +4,11 @@ const PuchersProducts=new mongoose.Schema({
     
     puchersUser:{
         type:String,
-        required:true
+        // required:true
     },
     productPuchersId:{
         type:String,
-        required:true
+        // required:true
     }
 });
 
